@@ -1,0 +1,44 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.2s ease-in-out;
+}
+.login-image {
+    width: 350px; /* Adjust the width to your liking */
+    height: auto;
+    margin-bottom: 20px; /* Space between the image and the form */
+}
+.form-group label {
+    text-align: right;
+    display: block;
+}
+.form-text {
+    color: red;
+    display: none;
+    text-align: right;
+    font-weight: 500;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

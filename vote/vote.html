@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التصويت</title>
+    <link rel="stylesheet" href="vote.css">
+    <!-- Bootstrap CSS -->
+<link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</noscript>
+
+</head>
+<body>
+    <div class="container">
+        <div class="form-group">
+            <label>نوع التصويت</label>
+            <div class="switch-container">
+                <!-- Switch for Regular Vote (Default Checked) -->
+                <label class="switch">
+                    <input type="checkbox" id="regularVote" name="voteType" value="regular" checked onchange="toggleVoteType('regularVote')">
+                    <span class="slider"></span>
+                </label>
+                <label for="regularVote" class="switch-label">التصويت العادي</label>
+        
+                <!-- Switch for Cumulative Vote -->
+                <label class="switch">
+                    <input type="checkbox" id="cumulativeVote" name="voteType" value="cumulative" onchange="toggleVoteType('cumulativeVote')">
+                    <span class="slider"></span>
+                </label>
+                <label for="cumulativeVote" class="switch-label">التصويت التراكمي</label>
+            </div>
+        </div>
+          
+        <form id="votingForm">
+            <!-- Question container -->
+            <div id="questionsContainer"></div> <!-- Questions will be dynamically added here -->
+
+            <!-- Signature box -->
+            <h3>التوقيع</h3>
+            <div class="signature-container">
+                <canvas id="signature-pad" width="400" height="200"></canvas>
+            </div>
+            <!-- Clear Canvas button -->
+            <button type="button" class="btn btn-secondary btn-clear-canvas" onclick="clearCanvas()">مسح التوقيع</button>
+
+            <!-- Submit button -->
+            <button type="submit" id="submitBtn" class="btn btn-warning btn-submit mt-4" onclick="submitData(event)">إرسال</button>
+
+        </form>
+    </div>
+    <script src="vote.js"></script>
+    <script src="../signature.js"></script>
+</body>
+</html>

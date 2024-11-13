@@ -67,7 +67,7 @@ function generateQuestions(isCumulativeVote) {
                 degreeInput.type = 'number';
                 degreeInput.classList.add('degree-input');
                 degreeInput.id = `degree${i}${j}`;
-                degreeInput.placeholder = 'درجة';
+                degreeInput.placeholder = 'سهم';
                 degreeInput.min = 1;  // Minimum value
                 degreeInput.max = 5;  // Maximum value
                 degreeInput.step = 1; // Step value (increments by 1)
